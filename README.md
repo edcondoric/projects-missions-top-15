@@ -6,15 +6,6 @@ The mission consists of two parts: first you will have to build a RestFul api an
 
 The deadline for delivery will be Friday, April 22.
 
-## Mission in Classroom:
-
-All mentors to assign the `Assesment Backend` mission that you can find when exploring the missions in your course, there, go to module 9.
-
-The deadline to publish this mission is Friday, April 8.
-
-<img width="825" alt="mission" src="https://user-images.githubusercontent.com/1481964/161668620-0b932455-f92c-4f8f-ab3d-d94c24e0e716.png">
-
-
 ## 1. Challenge
 
 ### FAVS API with JS
