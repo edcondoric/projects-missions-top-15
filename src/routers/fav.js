@@ -15,11 +15,10 @@ router.post('/api/favs', auth, async (req, res) => {
 })
 
 router.get('/api/favs', auth, async (req, res) => {
-    console.log(req.user);
+
     try {
-        await req.user.populate('favs').execPopulate()
+        await req.user.populate('favs')
         res.send(req.user.favs)
-        console.log(req.user.favs);
     } catch (e) {
         res.status(500).send()
     }
@@ -27,7 +26,6 @@ router.get('/api/favs', auth, async (req, res) => {
 
 router.get('/api/favs/:id', auth, async (req, res) => {
     const _id = req.params.id
-
     try {
         const fav = await Fav.findOne({ _id, owner: req.user._id })
 
