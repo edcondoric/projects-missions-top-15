@@ -1,9 +1,9 @@
 const express = require('express')
 const Fav = require('../models/fav')
-const auth = require('../middleware/auth')
+const isAuthenticated = require('../middleware/auth')
 const router = new express.Router()
 
-router.post('/api/favs', auth, async (req, res) => {
+router.post('/api/favs', isAuthenticated, async (req, res) => {
     const fav = new Fav({...req.body, owner: req.user._id})
 
     try {
@@ -14,7 +14,7 @@ router.post('/api/favs', auth, async (req, res) => {
     }
 })
 
-router.get('/api/favs', auth, async (req, res) => {
+router.get('/api/favs', isAuthenticated, async (req, res) => {
 
     try {
         await req.user.populate('favs')
@@ -24,7 +24,7 @@ router.get('/api/favs', auth, async (req, res) => {
     }
 })
 
-router.get('/api/favs/:id', auth, async (req, res) => {
+router.get('/api/favs/:id', isAuthenticated, async (req, res) => {
     const _id = req.params.id
     try {
         const fav = await Fav.findOne({ _id, owner: req.user._id })
@@ -39,7 +39,7 @@ router.get('/api/favs/:id', auth, async (req, res) => {
     }
 })
 
-router.delete('/api/favs/:id', auth, async (req, res) => {
+router.delete('/api/favs/:id', isAuthenticated, async (req, res) => {
     try {
         const fav = await Fav.findOneAndDelete({ _id: req.params.id, owner: req.user._id })
 
