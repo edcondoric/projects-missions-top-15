@@ -1,0 +1,33 @@
+{
+  "name": "assesment-backend",
+  "version": "1.0.0",
+  "description": "Assesment Backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/edcondoric/projects-missions-top-15.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "Ed Condori",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edcondoric/projects-missions-top-15/issues"
+  },
+  "homepage": "https://github.com/edcondoric/projects-missions-top-15#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  }
+}
